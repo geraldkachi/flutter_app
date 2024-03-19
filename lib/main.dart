@@ -1,13 +1,19 @@
 // import 'dart:js_util';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_app/pages/choose_location.dart';
+import 'package:flutter_app/pages/choose_location.dart';
 import 'package:flutter_app/pages/home.dart';
+import 'package:flutter_app/pages/loading.dart';
 import 'package:flutter_app/quote.dart';
 import 'package:flutter_app/quote_card.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home(),
+  initialRoute: "/",
+  routes: { 
+    "/": (context) => Loading(),
+    "/home": (context) => Home(),
+    "/location": (context) => ChooseLocation(),
+  },
   // home: ChooseLocation(),
   // home: QuoteList(),
 ));
