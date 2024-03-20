@@ -10,7 +10,7 @@ class FavouriteContacts extends StatefulWidget {
 }
 
 class _FavouriteContactsState extends State<FavouriteContacts> {
-  // List<String> favourites = [];
+  // List<String> favorites = [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +31,7 @@ class _FavouriteContactsState extends State<FavouriteContacts> {
               //  color: Colors.blue,
               child: ListView.builder(
                 padding: EdgeInsets.only(left: 18.0 ),
-                itemCount: favourites.length,
+                itemCount: favorites.length,
                 itemBuilder: (BuildContext context, int index) {
                   Padding(
                       padding: EdgeInsets.all(10.0),
@@ -39,11 +39,11 @@ class _FavouriteContactsState extends State<FavouriteContacts> {
                         CircleAvatar(
                           radius: 35.0,
                           backgroundImage:
-                              AssetImage(favourites[index].imageUrl),
+                              AssetImage(favorites[index].imageUrl),
                         ),
                         SizedBox(height: 6.0),
                         Text(
-                          favourites[index].name,
+                          favorites[index].name,
                           style: TextStyle(
                             color: Colors.blueGrey,
                             fontSize: 16.0,

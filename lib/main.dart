@@ -7,8 +7,8 @@ import 'package:flutter_app/quote_card.dart';
 import 'package:flutter_app/screens/home_screen.dart';
 
 void main() => runApp(MaterialApp(
-  // initialRoute: "/home_screen",
-  initialRoute: "/",
+  initialRoute: "/home_screen",
+  // initialRoute: "/",
   debugShowCheckedModeBanner: false,
   title: 'Flutter Chat Ui',
   theme: ThemeData(
@@ -16,10 +16,10 @@ void main() => runApp(MaterialApp(
     hintColor:  Color(0xFFFEF9EB),
    ),
   routes: { 
-    "/": (context) => Loading(),
-    "/home": (context) => Home(),
-    "/location": (context) => ChooseLocation(),
-    // "/home_screen": (context) => HomeScreen(),
+    // "/": (context) => Loading(),
+    // "/home": (context) => Home(),
+    // "/location": (context) => ChooseLocation(),
+    "/home_screen": (context) => HomeScreen(),
   },
   // home: ChooseLocation(),
   // home: QuoteList(),
