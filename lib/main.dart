@@ -1,18 +1,25 @@
-// import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/choose_location.dart';
 import 'package:flutter_app/pages/home.dart';
 import 'package:flutter_app/pages/loading.dart';
 import 'package:flutter_app/quote.dart';
 import 'package:flutter_app/quote_card.dart';
+import 'package:flutter_app/screens/home_screen.dart';
 
 void main() => runApp(MaterialApp(
+  // initialRoute: "/home_screen",
   initialRoute: "/",
+  debugShowCheckedModeBanner: false,
+  title: 'Flutter Chat Ui',
+  theme: ThemeData(
+    primaryColor:Colors.red,
+    hintColor:  Color(0xFFFEF9EB),
+   ),
   routes: { 
     "/": (context) => Loading(),
     "/home": (context) => Home(),
     "/location": (context) => ChooseLocation(),
+    // "/home_screen": (context) => HomeScreen(),
   },
   // home: ChooseLocation(),
   // home: QuoteList(),

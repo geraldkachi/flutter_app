@@ -27,7 +27,8 @@ void setUpWorldTime() async {
   Navigator.pushReplacementNamed(context, '/home', arguments: {
     'location': instance.location,
     'flag': instance.flag,
-    'time': instance.time
+    'time': instance.time,
+    "isDaytime": instance.isDaytime,
   });
   // print(instance.time);
 
