@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/world_time.dart';
+import 'package:http/http.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -11,11 +14,11 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
 String time = "Loading";
 
-void getData() async {
-  Response response get('https://jsonplaceholder.typicode.com/todos/1');
-  Map data = jsonDecode(response.body);
-  print(data);
-}
+// void getData() async {
+//   Response response = await get('https://jsonplaceholder.typicode.com/todos/1' as Uri);
+//   Map data = jsonDecode(response.body);
+//   print(data);
+// }
 
 void setUpWorldTime() async {
   WorldTime instance =  WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
@@ -34,7 +37,7 @@ void setUpWorldTime() async {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       // body: SafeArea(child: Text("Loading")),
       body: Padding(
         padding: EdgeInsets.all(50.0),
