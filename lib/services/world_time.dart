@@ -11,8 +11,8 @@ class WorldTime {
 
       //  is Future is like a Promise
     Future<void> getTime() async {
-
-      var urlPath = Uri.parse('http://worldtimeapi.org/api/timezone/$url'); 
+      try {
+        var urlPath = Uri.parse('http://worldtimeapi.org/api/timezones/$url'); 
 
       // make a request
       Response response = await get(urlPath);
@@ -34,6 +34,11 @@ class WorldTime {
 
       // set the time properties
       time = now.toString();
+      } catch (e) {
+        print('caught exception error: ' + e.toString());
+        time =  'could not get time data';
+      }
+    
   }
 }
 
