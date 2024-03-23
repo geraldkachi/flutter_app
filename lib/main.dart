@@ -5,6 +5,8 @@ import 'package:flutter_app/pages/loading.dart';
 import 'package:flutter_app/quote.dart';
 import 'package:flutter_app/quote_card.dart';
 import 'package:flutter_app/screens/home_screen.dart';
+import 'package:flutter_app/ticket_booking/ticket_booking.dart';
+import 'package:flutter_app/utils/app_style.dart';
 
 void main() => runApp(MaterialApp(
   initialRoute: "/home_screen",
@@ -12,7 +14,8 @@ void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   title: 'Flutter Chat Ui',
   theme: ThemeData(
-    primaryColor:Colors.red,
+    // primaryColor:Colors.red,
+    primaryColor: Styles.primaryColor,
     hintColor:  Color(0xFFFEF9EB),
    ),
   routes: { 
@@ -20,6 +23,7 @@ void main() => runApp(MaterialApp(
     // "/home": (context) => Home(),
     // "/location": (context) => ChooseLocation(),
     "/home_screen": (context) => HomeScreen(),
+    "/ticket_screen": (context) => TicketBooking(),
   },
   // home: ChooseLocation(),
   // home: QuoteList(),

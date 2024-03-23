@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/models/message_models.dart';
+import 'package:flutter_app/ticket_booking/ticket_booking.dart';
 import 'package:flutter_app/widget/category_selector.dart';
 import 'package:flutter_app/widget/favourite_contacts.dart';
 import 'package:flutter_app/widget/recent_chat.dart';
@@ -35,11 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
-            color: Colors.white,
-            iconSize: 30.0,
-            onPressed: () => {},
-          ),
+              icon: Icon(Icons.search),
+              color: Colors.white,
+              iconSize: 30.0,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TicketBooking()),
+                );
+              }),
         ],
       ),
       body: Column(
@@ -55,10 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   topRight: Radius.circular(30.0),
                 )),
             child: Column(
-              children: <Widget>[
-                FavouriteContacts(),
-                RecentChats()
-              ],
+              children: <Widget>[FavouriteContacts(), RecentChats()],
             ),
           ))
         ],
