@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ticket_booking/hotel_view_card.dart';
 import 'package:flutter_app/ticket_booking/ticket_viewcard.dart';
+import 'package:flutter_app/utils/app_info_list.dart';
 import 'package:flutter_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
 
@@ -71,13 +72,10 @@ class HomeTicket extends StatelessWidget {
                 ],
               )
               ),   
-        const  SingleChildScrollView(
+          SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.only(left: 20),
-          child: Row(children: [
-          TicketViewCard(),
-          TicketViewCard(),
-         ],)
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(children: ticketList.map((e) => TicketViewCard(ticket: e)).toList(),)
          ,),
         const Gap(15),
         Container(
@@ -94,18 +92,12 @@ class HomeTicket extends StatelessWidget {
                     ],),
         ), 
         const Gap(15),
-        const SingleChildScrollView(
+         SingleChildScrollView(
            scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.only(left: 20),
-          child:  Row(children: [
-          HotelCard(),
-          Gap(15),
-          HotelCard(),
-          Gap(15),
-          HotelCard(),
-          Gap(15),
-          HotelCard()
-          ]),)
+          padding: const EdgeInsets.only(left: 20),
+          child:  Row(children: hotelList.map((e) => HotelCard(hotel: e)).toList()
+           ),
+          )
         ],
       ),
     );

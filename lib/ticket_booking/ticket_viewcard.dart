@@ -10,7 +10,8 @@ import 'package:flutter_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
 
 class TicketViewCard extends StatelessWidget {
-  const TicketViewCard({super.key});
+  final Map<String, dynamic> ticket;
+  const TicketViewCard({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +36,8 @@ class TicketViewCard extends StatelessWidget {
                 children: [
                   Row(
                     children: <Widget>[
-                      const Text("NYC",
-                          style: TextStyle(
+                      Text("${ticket['from']['code']}",
+                          style: const TextStyle(
                               fontSize: 17,
                               color: Colors.white,
                               fontWeight: FontWeight.w500)),
@@ -49,7 +50,7 @@ class TicketViewCard extends StatelessWidget {
                           height: 24,
                           child: LayoutBuilder(builder: (BuildContext context,
                               BoxConstraints constraints) {
-                            print('this is ${constraints.constrainWidth()}');
+                            // print('this is ${constraints.constrainWidth()}');
                             return Flex(
                                 direction: Axis.horizontal,
                                 mainAxisAlignment:
@@ -72,32 +73,33 @@ class TicketViewCard extends StatelessWidget {
                       ])),
                       const ThickContainer(),
                       const Spacer(),
-                      const Text("LDN",
-                          style: TextStyle(
+                      Text("${ticket['to']['code']}",
+                          style: const TextStyle(
                               fontSize: 17,
                               color: Colors.white,
                               fontWeight: FontWeight.w500)),
                     ],
                   ),
                   const Gap(2),
-                  const Row(
+                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(
                             width: 100,
-                            child: Text('New York',
-                                style: TextStyle(color: Colors.white))),
-                        Text("8H  30H",
-                            style: TextStyle(
+                            child: Text('${ticket['from']['name']}',
+                                style: const TextStyle(color: Colors.white))),
+                        Text("${ticket['flying_time']}",
+                            style: const TextStyle(
                                 fontSize: 14,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),
                         SizedBox(
                             width: 100,
-                            child: Text('LONDON',
+                            child: Text('${ticket['to']['name']}',
                                 textAlign: TextAlign.end,
-                                style: TextStyle(color: Colors.white))),
-                      ])
+                                style: const TextStyle(color: Colors.white))),
+                      ]
+                      )
                 ],
               ),
             ),
@@ -139,7 +141,7 @@ class TicketViewCard extends StatelessWidget {
                                               )),
                                     )),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(
@@ -163,7 +165,7 @@ class TicketViewCard extends StatelessWidget {
                     bottomRight: Radius.circular(21)),
               ),
               padding: const EdgeInsets.only(left: 16, top: 10, right: 16, bottom: 16),
-              child: const Column(
+              child:  Column(
                 children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,27 +174,27 @@ class TicketViewCard extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('1 MAY', style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
-                        Gap(5),
-                        Text("Date", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
+                        Text('${ticket['date']}', style: const TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
+                        const  Gap(5),
+                        const Text("Date", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
                       ],
                     ),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('08:00AM', style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
-                        Gap(5),
-                        Text("Departure time", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
+                        Text('${ticket['departure_time']}', style: const TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
+                        const Gap(5),
+                        const Text("Departure time", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
                       ],
                     ),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('23', style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
-                        Gap(5),
-                        Text("Number", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
+                        Text('${ticket['number']}', style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
+                        const Gap(5),
+                        const Text("Number", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
                       ],
                     )
                   ],
