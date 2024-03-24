@@ -192,7 +192,7 @@ class TicketViewCard extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('${ticket['number']}', style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
+                        Text(ticket['number'].toString(), style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.w500),),
                         const Gap(5),
                         const Text("Number", style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500))
                       ],

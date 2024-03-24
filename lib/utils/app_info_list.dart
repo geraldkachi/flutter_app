@@ -44,7 +44,7 @@ List<Map<String, dynamic>> ticketList = [
       'name': 'Shanghai',
     },
     'flying_time': "4H 20M",
-    "date": "1 MAY",
+    "date": "17 JUNE",
     "departure_time": "09:00AM",
     "number": 45 ,
   },

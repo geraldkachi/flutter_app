@@ -57,21 +57,22 @@ class HomeTicket extends StatelessWidget {
                     Text("Search", style: TextStyle(fontSize: 14,color: Colors.grey.shade500, fontWeight: FontWeight.w500))
                   ],), 
                   ),
-                  const Gap(40),
+                  const Gap(20),
                    Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Text("Upcoming Flights", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
+                    const Text("Upcoming Flights", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
                     InkWell(
                       onTap: () {
                         print("Make shit happen");
                       },
-                      child: Text("View all", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
+                      child: const Text("View all", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
                     ),
                   ],)
                 ],
               )
               ),   
+                const Gap(15),
           SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(left: 20),
@@ -97,7 +98,8 @@ class HomeTicket extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20),
           child:  Row(children: hotelList.map((e) => HotelCard(hotel: e)).toList()
            ),
-          )
+          ),
+          const Gap(15),
         ],
       ),
     );
