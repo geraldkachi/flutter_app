@@ -2,9 +2,11 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ticket_booking/hotel_view_card.dart';
 import 'package:flutter_app/ticket_booking/ticket_viewcard.dart';
+import 'package:flutter_app/ticket_booking/width/double_text_widget.dart';
 import 'package:flutter_app/utils/app_info_list.dart';
 import 'package:flutter_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class HomeTicket extends StatelessWidget {
   const HomeTicket({super.key});
@@ -58,6 +60,8 @@ class HomeTicket extends StatelessWidget {
                   ],), 
                   ),
                   const Gap(20),
+                    // const DoubleTextWidget(bigText: "Upcoming flights", smallText: "View all"),
+
                    Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -72,26 +76,27 @@ class HomeTicket extends StatelessWidget {
                 ],
               )
               ),   
-                const Gap(15),
+          const Gap(15),
           SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(left: 20),
           child: Row(children: ticketList.map((e) => TicketViewCard(ticket: e)).toList(),)
          ,),
         const Gap(15),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Hotels", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
-              InkWell(
-                onTap: (){},
-                child: const Text("View all", style: TextStyle(fontSize: 16,color: Color(0xFF3b3b3b),fontWeight: FontWeight.w500)),
-              )
+        const DoubleTextWidget(bigText: "Hotels", smallText: "View all"),
+        // Container(
+        //   padding: const EdgeInsets.symmetric(horizontal: 20),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       const Text("Hotels", style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold)),
+        //       InkWell(
+        //         onTap: (){},
+        //         child: const Text("View all", style: TextStyle(fontSize: 16,color: Color(0xFF3b3b3b),fontWeight: FontWeight.w500)),
+        //       )
                       
-                    ],),
-        ), 
+        //             ],),
+        // ), 
         const Gap(15),
          SingleChildScrollView(
            scrollDirection: Axis.horizontal,
@@ -100,6 +105,7 @@ class HomeTicket extends StatelessWidget {
            ),
           ),
           const Gap(15),
+          
         ],
       ),
     );
