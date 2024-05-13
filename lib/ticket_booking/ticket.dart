@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:barcode_widget/barcode_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/utils/app_style.dart';
@@ -77,9 +80,74 @@ class Ticket extends StatelessWidget {
                 ),
                 ]
             ),
-            )
-        ],)
-      ],),
+            ),
+
+          Container(
+            padding: EdgeInsets.all(15),
+            margin: EdgeInsets.only(left: 15, right: 15),
+            color: Colors.white,
+            child: 
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: BarcodeWidget(
+                    barcode: Barcode.code128(),
+                    data: 'https://github.com/martinovovo',
+                    drawText: false,
+                    color: Styles.textColor,
+                    width: double.infinity,
+                    height: 70,
+                    ),
+                ),
+              ),
+          ),
+          
+          Gap(20),
+           Container(
+            padding:const EdgeInsets.only(left: 15),
+            child: TicketViewCard(ticket: ticketList[0],),
+          ), 
+        ],),
+
+        Positioned(
+          left: 22,
+          top: 295,
+          child: Container(
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Styles.textColor, width: 2)
+            ),
+            child: CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.primaryColor,
+            ),
+          ),
+        ),
+        Positioned(
+          right: 22,
+          top: 295,
+          child: Container(
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Styles.textColor, width: 2)
+            ),
+            child: CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.primaryColor,
+            ),
+          ),
+        ),
+      ],
+      ),
     );
   }
 }
