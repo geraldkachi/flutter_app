@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_app/services/world_time.dart';
 
 class ChooseLocation extends StatefulWidget {
@@ -70,26 +71,59 @@ class _ChooseLocationState extends State<ChooseLocation> {
       //   },
       //     child: Text('Choose a location button ${counter}'),
       // ),
-      body: ListView.builder(
-          itemCount: locations.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
-              child: Card(
-                child: ListTile(
-                  onTap: () { 
-                    // print(locations[index].location);
-                     updateTime(index);
-                  },
-                  title: Text(locations[index].location),
-                  leading: CircleAvatar(
-                    backgroundImage:
-                        AssetImage('assets/${locations[index].flag}'),
+      body: Container(
+        child: Stack(
+          children: [
+            ListView.builder(
+            itemCount: locations.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+                child: Card(
+                  child: ListTile(
+                    onTap: () {
+                      // print(locations[index].location);
+                       updateTime(index);
+                    },
+                    title: Text(locations[index].location),
+                    leading: CircleAvatar(
+                      backgroundImage:
+                          AssetImage('assets/${locations[index].flag}'),
+                    ),
                   ),
                 ),
+              );
+            }),
+
+            Positioned(
+              bottom:  100,
+              left:  0,
+              child: Expanded(
+                flex: 1,
+                child: Row(
+                  children: [
+                     TextButton.icon(
+                      onPressed: () => Navigator.pushNamed(context,'/quote_list'),
+                      label: Text("Quote"),
+                      icon: Icon(Icons.ac_unit_sharp),
+                      ),
+                     TextButton.icon(
+                      onPressed: () => Navigator.pushNamed(context,'/home_screen'),
+                      label: Text("Chats"),
+                      icon: Icon(Icons.ac_unit_sharp),
+                      ),
+                     TextButton.icon(
+                      onPressed: () => Navigator.pushNamed(context,'/ticket_screen'),
+                      label: Text("Ticket Screen"),
+                      icon: Icon(Icons.ac_unit_sharp),
+                      ),
+                  ],
+                ),
               ),
-            );
-          }),
+            )
+          ],
+        )
+      ),
     );
   }
 }
