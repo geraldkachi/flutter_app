@@ -77,7 +77,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
               padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
               child: Card(
                 child: ListTile(
-                  onTap: () {
+                  onTap: () { 
                     // print(locations[index].location);
                      updateTime(index);
                   },

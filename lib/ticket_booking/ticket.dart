@@ -9,9 +9,9 @@ import 'package:flutter_app/utils/app_style.dart';
 import 'package:flutter_app/utils/app_layout.dart';
 import 'package:flutter_app/utils/app_info_list.dart';
 import 'package:flutter_app/ticket_booking/ticket_viewcard.dart';
-import 'package:flutter_app/ticket_booking/width/tabs_widget.dart';
-import 'package:flutter_app/ticket_booking/width/column-layout.dart';
-import 'package:flutter_app/ticket_booking/width/layout_builder-widget.dart';
+import 'package:flutter_app/ticket_booking/widget/tabs_widget.dart';
+import 'package:flutter_app/ticket_booking/widget/column-layout.dart';
+import 'package:flutter_app/ticket_booking/widget/layout_builder-widget.dart';
 
 class Ticket extends StatelessWidget {
   const Ticket({super.key});

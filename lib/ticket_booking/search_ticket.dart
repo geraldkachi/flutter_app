@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/ticket_booking/width/double_text_widget.dart';
-import 'package:flutter_app/ticket_booking/width/icon_text_widget.dart';
-import 'package:flutter_app/ticket_booking/width/tabs_widget.dart';
+import 'package:flutter_app/ticket_booking/widget/double_text_widget.dart';
+import 'package:flutter_app/ticket_booking/widget/icon_text_widget.dart';
+import 'package:flutter_app/ticket_booking/widget/tabs_widget.dart';
 import 'package:flutter_app/utils/app_layout.dart';
 import 'package:gap/gap.dart';
 

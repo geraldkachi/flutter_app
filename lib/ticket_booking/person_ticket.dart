@@ -2,8 +2,8 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/ticket_booking/width/column-layout.dart';
-import 'package:flutter_app/ticket_booking/width/layout_builder-widget.dart';
+import 'package:flutter_app/ticket_booking/widget/column-layout.dart';
+import 'package:flutter_app/ticket_booking/widget/layout_builder-widget.dart';
 import 'package:flutter_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
 

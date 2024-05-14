@@ -45,11 +45,12 @@ void setUpWorldTime() async {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // body: SafeArea(child: Text("Loading")),
-      body: Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Text("Loading ")),
+    return const Scaffold(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(50.0),
+          child: Text("Loading ", style: TextStyle(fontSize: 45),)),
+      ),
     );
   }
 }

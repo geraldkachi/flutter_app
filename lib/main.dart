@@ -9,7 +9,7 @@ import 'package:flutter_app/ticket_booking/ticket_booking.dart';
 import 'package:flutter_app/utils/app_style.dart';
 
 void main() => runApp(MaterialApp(
-  initialRoute: "/home_screen",
+  initialRoute: "//",
   // initialRoute: "/",
   debugShowCheckedModeBanner: false,
   title: 'Flutter Chat Ui',
@@ -19,9 +19,9 @@ void main() => runApp(MaterialApp(
     hintColor:  Color(0xFFFEF9EB),
    ),
   routes: { 
-    // "/": (context) => Loading(),
-    // "/home": (context) => Home(),
-    // "/location": (context) => ChooseLocation(),
+    "/": (context) => Loading(),
+    "/home": (context) => Home(),
+    "/location": (context) => ChooseLocation(),
     "/home_screen": (context) => const HomeScreen(),
     "/ticket_screen": (context) => const TicketBooking(),
   },
@@ -40,8 +40,8 @@ class _QuoteListState extends State<QuoteList> {
 
 List<Quote> quotes = [
   Quote(author: "Oscar wilder", text: 'Be Yourself: everyone else is already taken'),
-   Quote(author: "Oscar wilder", text: "I have nothing to declare except my genius"),
-   Quote(author: "Oscar wilder", text: "The truth is rarely pure and never simple")
+  Quote(author: "Oscar wilder", text: "I have nothing to declare except my genius"),
+  Quote(author: "Oscar wilder", text: "The truth is rarely pure and never simple")
 ];
 
 // Widget quoteTemplate(quote) {

@@ -2,7 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ticket_booking/hotel_view_card.dart';
 import 'package:flutter_app/ticket_booking/ticket_viewcard.dart';
-import 'package:flutter_app/ticket_booking/width/double_text_widget.dart';
+import 'package:flutter_app/ticket_booking/widget/double_text_widget.dart';
 import 'package:flutter_app/utils/app_info_list.dart';
 import 'package:flutter_app/utils/app_style.dart';
 import 'package:gap/gap.dart';

@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,9 +16,10 @@ class _HomeState extends State<Home> {
   Map<dynamic, dynamic> data = {};
   @override
   Widget build(BuildContext context) {
-data = data.isNotEmpty
-       ? data
-        : ModalRoute.of(context)!.settings.arguments as Map<dynamic, dynamic>;    // dynamic data = ModalRoute.of(context)!.settings!.arguments!;
+    data = data.isNotEmpty
+        ? data
+        : ModalRoute.of(context)!.settings.arguments as Map<dynamic,
+            dynamic>; // dynamic data = ModalRoute.of(context)!.settings!.arguments!;
 
     // set background color
     String bgImage = data['isDaytime'] ? 'day.png' : 'night.png';
@@ -26,19 +30,19 @@ data = data.isNotEmpty
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/$bgImage'),
-              fit: BoxFit.cover,
-            )
-          ),
+              image: DecorationImage(
+            image: AssetImage('assets/$bgImage'),
+            fit: BoxFit.cover,
+          )),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 120.0, 0, 0),
             child: Column(
               children: <Widget>[
                 TextButton.icon(
                   onPressed: () async {
-                    dynamic result = await Navigator.pushNamed(context, '/location');
-                    if(result != null){
+                    dynamic result =
+                        await Navigator.pushNamed(context, '/location');
+                    if (result != null) {
                       setState(() {
                         data = {
                           'time': result['time'],
@@ -60,13 +64,13 @@ data = data.isNotEmpty
                     ),
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       data['location'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 28.0,
                         letterSpacing: 2.0,
                         color: Colors.white,
@@ -74,14 +78,21 @@ data = data.isNotEmpty
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0),
-                Text(
-                  data['time'],
-                  style: TextStyle(
-                    fontSize: 66.0,
-                    color: Colors.white
-                  )
+                const SizedBox(height: 20.0),
+                Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage('assets/${data['flag']}'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
+                Text(data['time'],
+                    style: const TextStyle(fontSize: 66.0, color: Colors.white)),
+             
               ],
             ),
           ),
