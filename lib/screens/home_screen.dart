@@ -22,12 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           color: Colors.white,
           iconSize: 30.0,
           onPressed: () => {},
         ),
-        title: Text("Chats",
+        title: const Text("Chats",
             style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               color: Colors.white,
               iconSize: 30.0,
               onPressed: () {
@@ -49,17 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: <Widget>[
-          CategorySelector(),
+          const CategorySelector(),
           Expanded(
               child: Container(
             height: 500.0,
             decoration: BoxDecoration(
                 color: Theme.of(context).hintColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30.0),
                   topRight: Radius.circular(30.0),
                 )),
-            child: Column(
+            child: const Column(
               children: <Widget>[FavouriteContacts(), RecentChats()],
             ),
           ))

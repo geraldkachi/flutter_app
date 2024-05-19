@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566816189990",
+    "project_id": "ninja-brew-crew-71122",
+    "storage_bucket": "ninja-brew-crew-71122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566816189990:android:d7a0ac2cd515cf441880e7",
+        "android_client_info": {
+          "package_name": "com.geraldkachi.flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9umRX4pSwgm5h-E1_F-0x3jnkwocCcl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

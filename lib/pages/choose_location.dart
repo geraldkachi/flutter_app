@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_app/services/world_time.dart';
 
 class ChooseLocation extends StatefulWidget {
@@ -13,7 +12,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
   List<WorldTime> locations = [
     WorldTime(location: "London", flag: "uk.png", url: "Europe/London"),
     WorldTime(location: "Athens", flag: "greece.png", url: "Europe/Berlin"),
-    WorldTime(location: "Cairo", flag: "egypt.png ", url: "Africa/Cairo"),
+    WorldTime(location: "Cairo", flag: "egypt.png", url: "Africa/Cairo"),
     WorldTime(location: "Nairobi", flag: "kenya.png", url: "Africa/Nairobi"),
     WorldTime(location: "Chicago", flag: "usa.png", url: "America/Chicago"),
     WorldTime(location: "New York", flag: "usa.png", url: "America/New_York"),
@@ -35,10 +34,10 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
   int counter = 0;
   void getData() async {
-    await Future.delayed(Duration(seconds: 3), () {
+    await Future.delayed(const Duration(seconds: 3), () {
       print('yoshi');
     });
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       print('egg colletor');
     });
     print('statement');
@@ -59,7 +58,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text(style: TextStyle(color: Colors.white), "Choose A Location"),
+        title: const Text(style: TextStyle(color: Colors.white), "Choose A Location"),
         centerTitle: true,
         elevation: 0,
       ),
@@ -78,7 +77,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
             itemCount: locations.length,
             itemBuilder: (context, index) {
               return Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+                padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
                 child: Card(
                   child: ListTile(
                     onTap: () {
@@ -95,33 +94,34 @@ class _ChooseLocationState extends State<ChooseLocation> {
               );
             }),
 
-            Positioned(
+
+
+
+             Positioned(
               bottom:  100,
               left:  0,
-              child: Expanded(
-                flex: 1,
-                child: Row(
-                  children: [
-                     TextButton.icon(
-                      onPressed: () => Navigator.pushNamed(context,'/quote_list'),
-                      label: Text("Quote"),
-                      icon: Icon(Icons.ac_unit_sharp),
-                      ),
-                     TextButton.icon(
-                      onPressed: () => Navigator.pushNamed(context,'/home_screen'),
-                      label: Text("Chats"),
-                      icon: Icon(Icons.ac_unit_sharp),
-                      ),
-                     TextButton.icon(
-                      onPressed: () => Navigator.pushNamed(context,'/ticket_screen'),
-                      label: Text("Ticket Screen"),
-                      icon: Icon(Icons.ac_unit_sharp),
-                      ),
-                  ],
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                   TextButton.icon(
+                    onPressed: () => Navigator.pushNamed(context,'/quote_list'),
+                    label: const Text("Quote"),
+                    icon: const Icon(Icons.ac_unit_sharp),
+                    ),
+                   TextButton.icon(
+                    onPressed: () => Navigator.pushNamed(context,'/home_screen'),
+                    label: const Text("Chats"),
+                    icon: const Icon(Icons.ac_unit_sharp),
+                    ),
+                   TextButton.icon(
+                    onPressed: () => Navigator.pushNamed(context,'/ticket_screen'),
+                    label: const Text("Ticket Screen"),
+                    icon: const Icon(Icons.ac_unit_sharp),
+                    ),
+                ],
               ),
             )
-          ],
+          ],  
         )
       ),
     );

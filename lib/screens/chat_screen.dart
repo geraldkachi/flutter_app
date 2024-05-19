@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/models/message_models.dart';
 import 'package:flutter_app/models/user_models.dart';
 
-
 class ChatScreen extends StatefulWidget {
   final User user;
 
@@ -16,25 +15,25 @@ class _ChatScreenState extends State<ChatScreen> {
   _buildMessage(Message message, bool isMe) {
     final Container msg = Container(
       margin: isMe
-          ? EdgeInsets.only(
+          ? const EdgeInsets.only(
               top: 8.0,
               bottom: 8.0,
               left: 80.0,
             )
-          : EdgeInsets.only(
+          : const EdgeInsets.only(
               top: 8.0,
               bottom: 8.0,
             ),
-      padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
       width: MediaQuery.of(context).size.width * 0.75,
       decoration: BoxDecoration(
-        color: isMe ? Theme.of(context).hintColor : Color(0xFFFFEFEE),
+        color: isMe ? Theme.of(context).hintColor : const Color(0xFFFFEFEE),
         borderRadius: isMe
-            ? BorderRadius.only(
+            ? const BorderRadius.only(
                 topLeft: Radius.circular(15.0),
                 bottomLeft: Radius.circular(15.0),
               )
-            : BorderRadius.only(
+            : const BorderRadius.only(
                 topRight: Radius.circular(15.0),
                 bottomRight: Radius.circular(15.0),
               ),
@@ -44,16 +43,16 @@ class _ChatScreenState extends State<ChatScreen> {
         children: <Widget>[
           Text(
             message.time,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.blueGrey,
               fontSize: 16.0,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
           Text(
             message.text,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.blueGrey,
               fontSize: 16.0,
               fontWeight: FontWeight.w600,
@@ -70,8 +69,8 @@ class _ChatScreenState extends State<ChatScreen> {
         msg,
         IconButton(
           icon: message.isLiked
-              ? Icon(Icons.favorite)
-              : Icon(Icons.favorite_border),
+              ? const Icon(Icons.favorite)
+              : const Icon(Icons.favorite_border),
           iconSize: 30.0,
           color: message.isLiked
               ? Theme.of(context).primaryColor
@@ -84,13 +83,13 @@ class _ChatScreenState extends State<ChatScreen> {
 
   _buildMessageComposer() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       height: 70.0,
       color: Colors.white,
       child: Row(
         children: <Widget>[
           IconButton(
-            icon: Icon(Icons.photo),
+            icon: const Icon(Icons.photo),
             iconSize: 25.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {},
@@ -99,13 +98,13 @@ class _ChatScreenState extends State<ChatScreen> {
             child: TextField(
               textCapitalization: TextCapitalization.sentences,
               onChanged: (value) {},
-              decoration: InputDecoration.collapsed(
+              decoration: const InputDecoration.collapsed(
                 hintText: 'Send a message...',
               ),
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             iconSize: 25.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {},
@@ -122,21 +121,21 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         leading: IconButton(
-    icon: Icon(Icons.arrow_back, color: Colors.white),
-    onPressed: () => Navigator.of(context).pop(),
-  ),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text(
           widget.user.name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 28.0,
             fontWeight: FontWeight.bold,
-             color: Colors.white,
+            color: Colors.white,
           ),
         ),
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.more_horiz),
+            icon: const Icon(Icons.more_horiz),
             iconSize: 30.0,
             color: Colors.white,
             onPressed: () {},
@@ -149,7 +148,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0),
@@ -157,13 +156,13 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30.0),
                     topRight: Radius.circular(30.0),
                   ),
                   child: ListView.builder(
                     reverse: true,
-                    padding: EdgeInsets.only(top: 15.0),
+                    padding: const EdgeInsets.only(top: 15.0),
                     itemCount: messages.length,
                     itemBuilder: (BuildContext context, int index) {
                       final Message message = messages[index];
